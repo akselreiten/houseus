@@ -30,8 +30,10 @@ HouseMap.prototype.initVis = function() {
     var vis = this;
     this.Lmap = L.map(this.parentElement).setView(this.center, 14);
 
-    this.Lmap.on('popupopen', function (e) {
-        console.log(e)
+    this.Lmap.on('click', function (e) {
+        $("#alt2").toggle();
+        $("#alt1").toggle();
+
     });
 
     vis.wrangleData();
@@ -83,7 +85,12 @@ HouseMap.prototype.updateVis = function() {
 
     vis.data.forEach(function(station) {
         popupContent = station.name;
-        stationMarkers.addLayer(L.marker([station.lat, station.long]).bindPopup(popupContent));
+        var marker = L.marker([station.lat, station.long]);
+        //stationMarkers.addLayer(L.marker([station.lat, station.long]).bindPopup(popupContent));
+        stationMarkers.addLayer(L.marker([station.lat, station.long]).on("click", function(e){
+            $("#alt2").toggle();
+            $("#alt1").toggle();
+        }));
     });
 
 }

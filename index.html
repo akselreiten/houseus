@@ -29,7 +29,7 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
-			$("#btn-facebook-container").hide();
+			$("#btn-facebook-container").prop("disabled",true);
 			$("#btn-explore").show();
 
 			//document.location.href = "views/orientate.html";
