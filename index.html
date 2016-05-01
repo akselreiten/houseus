@@ -96,8 +96,10 @@
 		console.log('Welcome!  Fetching your information.... ');
 		FB.api('/me', function(response) {
 			console.log('Successful login for: ' + response.name);
+			$("#btn-facebook-container").hide();
 			document.getElementById('status').innerHTML =
-					'Thanks for logging in, ' + response.name + '!';
+					'You are logged in as ' + response.name + '! <br>' +
+					'<a href="views/orientate.html"> <button class="btn-filter" id="btn-explore">Get Started</button></a>';
 		});
 	}
 
@@ -120,7 +122,6 @@
 
 		<div class="row">
 			<div id="btn-container">
-				<a href="views/orientate.html"> <button class="btn-filter" id="btn-explore">Get Started</button></a>
 				<div id="btn-facebook-container"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div>
 				<div id="status">
 			</div>
