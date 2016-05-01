@@ -67,19 +67,9 @@ HouseMap.prototype.updateVis = function() {
     L.tileLayer(openStreetMap, {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Aksel Reiten'}).addTo(this.Lmap);
 
-    var mitCampus = L.circle(vis.center, 100, {
-        color: 'red',
-        fillColor: '#ddd',
-        fillOpacity: 0.5
-    }).bindPopup("MIT Campus").addTo(vis.Lmap);
-
-    //	Adding Mouse listeners
-    mitCampus
-        .on('mouseover', function (e) {this.openPopup();})
-        .on('mouseout', function (e) {this.closePopup();});
+    
 
     var popupContent =  "MIT Campus";
-    L.marker(this.center).bindPopup(popupContent).addTo(this.Lmap);
 
     var stationMarkers = L.layerGroup().addTo(vis.Lmap);
 
