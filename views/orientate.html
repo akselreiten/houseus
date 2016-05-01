@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="" name="description">
+    <title>House.us: Welcome!</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style-orientate.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/leaflet.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <!-- Navbar -->
+    <div class="row row-centered headline">
+        <div class="col-md-12">
+            <a class="a-nav" href="index.html">Home</a>
+            <a class="a-nav" href="#">Housing</a>
+            <a class="a-nav" href="applications.html">Applications</a>
+            <a class="a-nav" href="#">About us</a>
+        </div>
+    </div>
+    <hr>
+
+    <div id="house-map"></div>
+
+    <h3>The Number Six Club</h3>
+
+    <div class="col-md-8 nopadding">
+
+        <p>Located right in the center of Cambridge just off the MIT campus, the Number Six Club offers a great and convinient summer location to live in. Just a few minutes walk from Boston and Cambridge. Some of the rooms overlook the picturesque view of the Charles River that is quite a sight to behold in the lovely Boston summer. It is quite close to the heart of the city, but still offers a peaceful environment.</p>
+        <p>Our house has an open kitchen complete with oven and fridge space, coin-operated laundry machines, sun deck and BBQ in garden, and spacious common areas. We can offer high-speed Wi-Fi Internet with static IP addresses and there are house computers for everyone to use.</p>
+
+        <table class="table table-condensed" id="table-requests">
+
+            <tbody id="table-requests-tbody">
+            <tr>
+                <td>Available from:</td>
+                <td>25th of May</td>
+            </tr>
+            <tr>
+                <td>Available to:</td>
+                <td>28th of August</td>
+            </tr>
+            <tr>
+                <td>Price single room:</td>
+                <td>$2,400</td>
+            </tr>
+            <tr>
+                <td>Price double room:</td>
+                <td>$2,200</td>
+            </tr>
+            <tr>
+                <td>Price triple room:</td>
+                <td>$2,000</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Living in the house</h4>
+        <p>The Number Six Club offers a vibrant social environment, creating a wonderful addition to social life at the Institute. With numerous events throughout the year, ranging from our regular weekly Cocktail Hours and Coffee Hours, to unique themed parties, formals, end-of-term toasts, retreats, and fraternity events.</p>
+        <img src="../data/img/5_no6.jpg" class="pics">
+        <img src="../data/img/3_no6.jpg" class="pics">
+    </div>
+
+    <div class="col-md-4 row-centered">
+        <img src="../data/img/4_no6.jpg" class="side-pics">
+        <btn class="btn btn-filter">Send application</btn>
+        <btn class="btn btn-filter">Add to list of interest</btn>
+    </div>
+
+
+</div>
+<!-- End Container -->
+
+
+<!-- Load JS libraries -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/leaflet.js"></script>
+
+<!-- Visualization objects -->
+<script src="../js/array.js"></script>
+<script src="../js/houseMap.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="../js/main.js"></script>
+
+</body>
+</html>
