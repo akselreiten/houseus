@@ -11,7 +11,9 @@ var array = [
         "lat": 42.355616,
         long : -71.098773,
         "description" : "The Number Six Club is a Nationally-affiliated Co-ed Literary Fraternity. Since our founding in 1889, we identify as a group which collectively aims to develop a cultured understanding of the world through discussion and debate. Our four-story, ivy-covered house is one of the oldest buildings on campus, located between Burton-Connor and MacGregor."
-    },
+    }
+
+    /*,
 
     {
         "id": 2,
@@ -76,6 +78,6 @@ var array = [
         long : -71.093818
     },
 
-
+*/
 
 ]

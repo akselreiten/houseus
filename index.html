@@ -10,31 +10,14 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style-front.css">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="../js/facebook.js"></script>
 </head>
 
 <body>
-
-
 <script>
-	window.fbAsyncInit = function() {
-		FB.init({
-			appId      : '258848811129275',
-			xfbml      : true,
-			version    : 'v2.6'
-		});
-	};
 
-	(function(d, s, id){
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-</script>
-
-
-<script>
 	// This is called with the results from from FB.getLoginStatus().
 	function statusChangeCallback(response) {
 		console.log('statusChangeCallback');
@@ -46,6 +29,10 @@
 		if (response.status === 'connected') {
 			// Logged into your app and Facebook.
 			testAPI();
+			$("#btn-facebook-container").hide();
+			$("#btn-explore").show();
+
+			//document.location.href = "views/orientate.html";
 		} else if (response.status === 'not_authorized') {
 			// The person is logged into Facebook, but not your app.
 			document.getElementById('status').innerHTML = 'Please log ' +
@@ -113,6 +100,7 @@
 					'Thanks for logging in, ' + response.name + '!';
 		});
 	}
+
 </script>
 
 <!--
@@ -120,13 +108,7 @@
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
 -->
-
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-<div id="status">
 </div>
-
 
 	<div class="wrapper">
 
@@ -138,21 +120,19 @@
 
 		<div class="row">
 			<div id="btn-container">
-				<a href="views/orientate.html"> <button class="btn-filter" id="btn-explore" >Get Started</button></a>
+				<a href="views/orientate.html"> <button class="btn-filter" id="btn-explore">Get Started</button></a>
+				<div id="btn-facebook-container"><fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button></div>
+				<div id="status">
 			</div>
 		</div>
 	</div>
 
 
-
-
-
 <!-- Load JS libraries: jQuery, bootstrap, D3, D3 tooltip -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
 <script src="js/d3.tip.js"></script>
 
 <!-- Your implementation -->
+		<script src="js/facebook.js"></script>
 
 </html>
