@@ -67,7 +67,7 @@ HouseMap.prototype.updateVis = function() {
     L.tileLayer(openStreetMap, {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Aksel Reiten'}).addTo(this.Lmap);
 
-    
+
 
     var popupContent =  "MIT Campus";
 
