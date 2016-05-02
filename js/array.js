@@ -13,15 +13,15 @@ var array = [
         "description" : "The Number Six Club is a Nationally-affiliated Co-ed Literary Fraternity. Since our founding in 1889, we identify as a group which collectively aims to develop a cultured understanding of the world through discussion and debate. Our four-story, ivy-covered house is one of the oldest buildings on campus, located between Burton-Connor and MacGregor."
     }
 
-    /*,
+    ,
 
     {
         "id": 2,
-        "name":"Kappa Sigma",
-        "lat": 42.356183,
-        long : -71.097294
+        "name":"Delta Tau Delta",
+        "lat": 42.351925,
+        long : -71.086299
     },
-
+/*
     {
         "id": 3,
         "name":"Delta Kappa Epsilon",

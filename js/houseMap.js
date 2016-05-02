@@ -1,8 +1,24 @@
 
+
+
+
+
 //	Helping functions
 
 function styleLines(line) {
     return { color: line.properties.LINE.toLowerCase()};
+}
+
+function hideContainers(){
+    $("#355616").hide();
+    $("#351925").hide();
+
+    $("#welcome-statement").hide();
+
+}
+
+function showContainer(lat) {
+    $("#" + lat).show();
 }
 
 
@@ -31,9 +47,8 @@ HouseMap.prototype.initVis = function() {
     this.Lmap = L.map(this.parentElement).setView(this.center, 14);
 
     this.Lmap.on('click', function (e) {
-        $("#alt2").toggle();
-        $("#alt1").toggle();
-
+        hideContainers();
+        $("#welcome-statement").show();
     });
 
     vis.wrangleData();
@@ -67,21 +82,30 @@ HouseMap.prototype.updateVis = function() {
     L.tileLayer(openStreetMap, {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Aksel Reiten'}).addTo(this.Lmap);
 
-
-
-    var popupContent =  "MIT Campus";
-
     var stationMarkers = L.layerGroup().addTo(vis.Lmap);
 
     vis.data.forEach(function(station) {
         popupContent = station.name;
         var marker = L.marker([station.lat, station.long]);
+        marker.bindPopup(popupContent);
+        marker.on("click",function(e){
+            var id = ("" + e.latlng.lat).split(".")[1];
+            if ($("#" + id).is(":visible")){
+                hideContainers();
+                showContainer("welcome-statement");
+            }else{
+                hideContainers();
+                showContainer(("" + e.latlng.lat).split('.')[1]);
+            }
+            console.log(("" + e.latlng.lat).split(".")[1])
+        });
+        stationMarkers.addLayer(marker);
         //stationMarkers.addLayer(L.marker([station.lat, station.long]).bindPopup(popupContent));
-        stationMarkers.addLayer(L.marker([station.lat, station.long]).on("click", function(e){
+        /*stationMarkers.addLayer(L.marker([station.lat, station.long]).on("click", function(e){
             console.log(e);
             $("#alt2").toggle();
             $("#alt1").toggle();
-        }));
+        }));*/
     });
 
 }

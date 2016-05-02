@@ -14,6 +14,7 @@
 <body>
 <script>
 
+
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
@@ -77,6 +78,8 @@
         FB.api('/me', function(response) {
             document.getElementById('name').innerHTML =
                     'Welcome to us, ' + response.name + '!';
+            document.getElementById('fb-name').innerHTML =
+                    "" + response.name + '';
         });
     }
 
@@ -103,7 +106,7 @@
 
 </div>
 
-<div class="container-fluid" style="display:none" id="alt1">
+<div class="container-fluid" style="display:none" id="355616">
 
         <h3>The Number Six Club</h3>
 
@@ -150,15 +153,15 @@
 
         <div class="col-md-4 row-centered">
             <img src="../data/img/4_no6.jpg" class="side-pics">
-            <btn class="btn btn-filter">Send application</btn>
+            <btn class="btn btn-filter btn-apply">Send application</btn>
         </div>
 
 </div>
 <!-- End Container -->
 
-<div class="container-fluid" style="display:none" id="dtd">
+<div class="container-fluid" style="display:none" id="351925">
 
-    <h3>The Number Six Club</h3>
+    <h3>Delta Tau Delta</h3>
 
     <div class="col-md-8 nopadding">
 
@@ -196,14 +199,14 @@
         </table>
 
         <h4>Living in the house</h4>
-        <p>The Number Six Club offers a vibrant social environment, creating a wonderful addition to social life at the Institute. With numerous events throughout the year, ranging from our regular weekly Cocktail Hours and Coffee Hours, to unique themed parties, formals, end-of-term toasts, retreats, and fraternity events.</p>
+        <p>The Delt house is a place to laugh, a place to party, and a place to learn. The bonds of brotherhood formed here truly last a lifetime and connect a remarkable list of successful alumni from Fortune 500 executives to Silicon Valley entrepreneurs. </p>
         <img src="../data/img/1_dtd.jpg" class="pics">
         <img src="../data/img/2_dtd.jpg" class="pics">
     </div>
 
     <div class="col-md-4 row-centered">
         <img src="../data/img/3_dtd.jpg" class="side-pics">
-        <btn class="btn btn-filter">Send application</btn>
+        <btn class="btn btn-filter btn-apply">Send application</btn>
     </div>
 
 </div>
@@ -211,7 +214,7 @@
 
 
 
-<div class="container-fluid" id="alt2">
+<div class="container-fluid" id="welcome-statement">
 
         <h3>Welcome to House.us!</h3>
 
@@ -240,7 +243,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <!--<tr>
                     <td>Alpha Delta Phi</td>
                     <td>25th of May</td>
                     <td>28th of August</td>
@@ -255,24 +258,25 @@
                     <td><button class="btn-apply">Apply</button></td>
                 </tr>
                 <tr>
+                    <td>Nu Delta</td>
+                    <td>21th of May</td>
+                    <td>31th of August</td>
+                    <td>2200</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>
+                <tr>
                     <td>Delta Kappa Epsilon</td>
                     <td>25th of May</td>
                     <td>28th of August</td>
                     <td>2100</td>
                     <td><button class="btn-apply">Apply</button></td>
-                </tr>
+                </tr>-->
+
                 <tr>
                     <td>Delta Tau Delta</td>
                     <td>22th of May</td>
                     <td>26th of August</td>
                     <td>2000</td>
-                    <td><button class="btn-apply">Apply</button></td>
-                </tr>
-                <tr>
-                    <td>Nu Delta</td>
-                    <td>21th of May</td>
-                    <td>31th of August</td>
-                    <td>2200</td>
                     <td><button class="btn-apply">Apply</button></td>
                 </tr>
                 <tr>
@@ -302,6 +306,22 @@
 
 </div>
 <!-- End Container -->
+
+<div id="cover" style="display:none" ></div>
+
+<div class="popup" style="display:none" >
+    <div class="xButton">X</div>
+    <div class="popup-form">
+        <h4>Application Form</h4>
+        <input type="text" class="form" placeholder="Name" id="fb-name">
+        <input type="text" class="form" placeholder="City" id="fb-city">
+        <input type="text" class="form" placeholder="From" id="date-from">
+        <input type="text" class="form" placeholder="To" id="date-to">
+        <input type="text" class="form" placeholder="Comments" id="comments">
+        <br>
+        <button class="btn form btn-submitted" id="btn-submitted">Send application</button>
+    </div>
+</div>
 
 
 <!-- Load JS libraries -->

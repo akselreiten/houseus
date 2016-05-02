@@ -1,3 +1,24 @@
+$(document).ready(function() {
+
+	$('.btn-apply').on("click",function(){
+		$('.popup').toggle();
+		$('#cover').toggle();
+	});
+
+	$('.btn-submitted').on("click",function(){
+		$('.popup').css("display","none");
+		$('#cover').css("display","none");
+		alert("Submitted")
+	});
+	$('.xButton').on("click",function(){
+		$('.popup').css("display","none");
+		$('#cover').css("display","none");
+
+	});
+});
+
+
+
 var allData = [];
 
 // Variable for the visualization instance
