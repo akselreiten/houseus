@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6a3ef32e-49f9-479b-95d0-22de5501822c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
     </list>
     <ignored path="houseus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.48466256">
-              <caret line="100" column="110" selection-start-line="100" selection-start-column="110" selection-end-line="100" selection-end-column="110" />
+              <caret line="100" column="109" selection-start-line="100" selection-start-column="109" selection-end-line="100" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -425,7 +424,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48466256">
-          <caret line="100" column="110" selection-start-line="100" selection-start-column="110" selection-end-line="100" selection-end-column="110" />
+          <caret line="100" column="109" selection-start-line="100" selection-start-column="109" selection-end-line="100" selection-end-column="109" />
           <folding />
         </state>
       </provider>
