@@ -1,4 +1,3 @@
-
 var allData = [];
 
 // Variable for the visualization instance

@@ -78,6 +78,7 @@ HouseMap.prototype.updateVis = function() {
         var marker = L.marker([station.lat, station.long]);
         //stationMarkers.addLayer(L.marker([station.lat, station.long]).bindPopup(popupContent));
         stationMarkers.addLayer(L.marker([station.lat, station.long]).on("click", function(e){
+            console.log(e);
             $("#alt2").toggle();
             $("#alt1").toggle();
         }));
