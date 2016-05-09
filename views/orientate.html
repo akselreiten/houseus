@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="" name="description">
+    <title>House.us: Welcome!</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style-orientate.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/leaflet.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/facebook.js"></script>
+</head>
+<body>
+<script>
+
+
+    // This is called with the results from from FB.getLoginStatus().
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        // The response object is returned with a status field that lets the
+        // app know the current login status of the person.
+        // Full docs on the response object can be found in the documentation
+        // for FB.getLoginStatus().
+        if (response.status === 'connected') {
+            // Logged into your app and Facebook.
+            testAPI();
+            $("#btn-facebook-container").hide();
+            $("#btn-explore").show();
+
+            //document.location.href = "views/orientate.html";
+        } else if (response.status === 'not_authorized') {
+            // The person is logged into Facebook, but not your app.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                    'into this app.';
+        } else {
+            // The person is not logged into Facebook, so we're not sure if
+            // they are logged into this app or not.
+            document.getElementById('status').innerHTML = 'Please log ' +
+                    'into Facebook.';
+        }
+    }
+
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+    }
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '258848811129275',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.5' // use graph api version 2.5
+        });
+
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
+
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    // Here we run a very simple test of the Graph API after login is
+    // successful.  See statusChangeCallback() for when this call is made.
+    function testAPI() {
+        FB.api('/me', function(response) {
+            document.getElementById('name').innerHTML =
+                    'Welcome to us, ' + response.name + '!';
+            document.getElementById('fb-name').innerHTML =
+                    "" + response.name + '';
+        });
+    }
+
+
+
+</script>
+
+<div class="container-fluid">
+
+    <!-- Navbar -->
+    <div class="row row-centered headline">
+        <div class="col-xs-2" id="name"></div>
+        <div class="col-xs-8">
+            <a class="a-nav" href="../index.html">Home</a>
+            <a class="a-nav" href="#">Housing</a>
+            <a class="a-nav" href="applications.html">Applications</a>
+            <a class="a-nav" href="contact.html">Contact us</a>
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    <hr>
+
+    <div id="house-map"></div>
+
+</div>
+
+<div class="container-fluid" style="display:none" id="355616">
+
+        <h3>The Number Six Club</h3>
+
+        <div class="col-xs-8 nopadding">
+
+            <p>Located right in the center of Cambridge just off the MIT campus, the Number Six Club offers a great and convinient summer location to live in. Just a few minutes walk from Boston and Cambridge. Some of the rooms overlook the picturesque view of the Charles River that is quite a sight to behold in the lovely Boston summer. It is quite close to the heart of the city, but still offers a peaceful environment.</p>
+            <p>Our house has an open kitchen complete with oven and fridge space, coin-operated laundry machines, sun deck and BBQ in garden, and spacious common areas. We can offer high-speed Wi-Fi Internet with static IP addresses and there are house computers for everyone to use.</p>
+
+            <table class="table table-condensed" id="table-requests">
+
+                <tbody id="table-requests-tbody">
+                <tr>
+                    <td>Available from:</td>
+                    <td>25th of May</td>
+                </tr>
+                <tr>
+                    <td>Available to:</td>
+                    <td>28th of August</td>
+                </tr>
+                <tr>
+                    <td>Price single room:</td>
+                    <td>$2,400</td>
+                </tr>
+                <tr>
+                    <td>Price double room:</td>
+                    <td>$2,200</td>
+                </tr>
+                <tr>
+                    <td>Price triple room:</td>
+                    <td>$2,000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h4>Living in the house</h4>
+            <p>The Number Six Club offers a vibrant social environment, creating a wonderful addition to social life at the Institute during the summer. Around 50 residents are staying with us over the summer, and the house has been the base of many fun summer-activities the past years. </p>
+            <img src="../data/img/5_no6.jpg" class="pics">
+            <img src="../data/img/3_no6.jpg" class="pics">
+        </div>
+
+        <div class="col-xs-4 row-centered">
+            <img src="../data/img/4_no6.jpg" class="side-pics">
+            <btn class="btn btn-filter btn-apply">Send application</btn>
+        </div>
+
+</div>
+<!-- End Container -->
+
+<div class="container-fluid" style="display:none" id="351925">
+
+    <h3>Delta Tau Delta</h3>
+
+    <div class="col-md-8 nopadding">
+
+        <p>The Delta Tau Delta fraternity house is a beautiful brownstone located in Boston's Back Bay at 416 Beacon Street. The great location provides easy access to the Prudential Center, Boston Commons, Fenway Park, Kenmore and Hynes Convention Center T stops, and MIT.</p>
+        <p>Housing comes with complete access to all the amenities of 416 Beacon Street. We have a TV room with a 65-inch TV, pool table, and piano. There is a ping pong table and bar downstairs. We have a fully equipped kitchen and laundry room. Rooms are furnished with couches, mattresses, desks, dressers, and closet space. All rooms have high speed internet and the option of DirecTV. Roofdeck equipped with tables, chairs, couches, a hammock, and a grill.</p>
+
+        <table class="table table-condensed" id="table-requests">
+
+            <tbody id="table-requests-tbody">
+            <tr>
+                <td>Available from:</td>
+                <td>25th of May</td>
+            </tr>
+            <tr>
+                <td>Available to:</td>
+                <td>28th of August</td>
+            </tr>
+            <tr>
+                <td>Price single room:</td>
+                <td>$2,200</td>
+            </tr>
+            <tr>
+                <td>Price double room:</td>
+                <td>$2,100</td>
+            </tr>
+            <tr>
+                <td>Price triple room:</td>
+                <td>$2,000</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Living in the house</h4>
+        <p>The Delt house is a place to laugh, a place to party, and a place to learn. The bonds of brotherhood formed here truly last a lifetime and connect a remarkable list of successful alumni from Fortune 500 executives to Silicon Valley entrepreneurs. </p>
+        <img src="../data/img/1_dtd.jpg" class="pics">
+        <img src="../data/img/2_dtd.jpg" class="pics">
+    </div>
+
+    <div class="col-md-4 row-centered">
+        <img src="../data/img/3_dtd.jpg" class="side-pics">
+        <btn class="btn btn-filter btn-apply">Send application</btn>
+    </div>
+
+</div>
+<!-- End Container -->
+
+
+
+<div class="container-fluid" id="welcome-statement">
+
+        <h3>Welcome to House.us!</h3>
+
+        <div class="col-md-8 nopadding">
+
+            <p>Many students reside in the greater Boston area every summer. During these
+            twelve weeks, they need temporary accommodation in a city with a competitive housing market.
+            Universities designate few dorms during the summer for undergraduates, reserving other dorms
+            for conferences, youth camps, and renovations. House.us provides a new way to search for
+                summer housing in Boston, and makes the whole process easier and less time consuming.
+            </p>
+
+            <p>
+                At our website, you can find all MIT fraternities, sororities and living groups we serve. Explore the map
+                to learn more about where they are located and what kind of housing they offer.Feel free to reach out
+                to us if you have any questions.
+            </p>
+
+            <table class="table table-condensed" id="table-requests">
+                <thead>
+                <tr>
+                    <td>FSILG</td>
+                    <td>Available from</td>
+                    <td>Available to</td>
+                    <td>Average price</td>
+                    <td>Send application</td>
+                </tr>
+                </thead>
+                <tbody>
+                <!--<tr>
+                    <td>Alpha Delta Phi</td>
+                    <td>25th of May</td>
+                    <td>28th of August</td>
+                    <td>2300</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Chi Phi</td>
+                    <td>20th of May</td>
+                    <td>23th of August</td>
+                    <td>2600</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Nu Delta</td>
+                    <td>21th of May</td>
+                    <td>31th of August</td>
+                    <td>2200</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Delta Kappa Epsilon</td>
+                    <td>25th of May</td>
+                    <td>28th of August</td>
+                    <td>2100</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>-->
+
+                <tr>
+                    <td>Delta Tau Delta</td>
+                    <td>22th of May</td>
+                    <td>26th of August</td>
+                    <td>2000</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>
+                <tr>
+                    <td>Number Six Club</td>
+                    <td>25th of May</td>
+                    <td>28th of August</td>
+                    <td>2300</td>
+                    <td><button class="btn-apply">Apply</button></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="col-md-4 row-centered">
+            <img src="../data/img/mit.jpg" class="side-pics">
+        </div>
+    </div>
+
+</div>
+<!-- End Container -->
+
+<div id="cover" style="display:none" ></div>
+
+<div class="popup" style="display:none" >
+    <div class="xButton">X</div>
+    <div class="popup-form">
+        <h4>Application Form</h4>
+        <input type="text" class="form" placeholder="Name" id="fb-name">
+        <input type="text" class="form" placeholder="City" id="fb-city">
+        <input type="text" class="form" placeholder="From" id="date-from">
+        <input type="text" class="form" placeholder="To" id="date-to">
+        <input type="text" class="form" placeholder="Comments" id="comments">
+        <br>
+        <button class="btn form btn-submitted" id="btn-submitted">Send application</button>
+    </div>
+</div>
+
+
+<!-- Load JS libraries -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/leaflet.js"></script>
+
+<!-- Visualization objects -->
+<script src="../js/array.js"></script>
+<script src="../js/houseMap.js"></script>
+
+<!-- Load data, create visualizations -->
+<script src="../js/main.js"></script>
+
+
+</body>
+</html>
